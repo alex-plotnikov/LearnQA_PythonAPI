@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/../../LearnQA_PythonAPI\.idea/codestream.xml
+# Datasource local storage ignored files
+/../../../../../../:\Users\Alexander.Plotnikov\PycharmProjects\LearnQA_PythonAPI\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
