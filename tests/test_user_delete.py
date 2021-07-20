@@ -1,3 +1,5 @@
+import allure
+
 from lib.assertions import Assertions
 from lib.base_case import BaseCase
 from lib.my_requests import MyRequests
@@ -5,6 +7,8 @@ from lib.my_requests import MyRequests
 
 class TestUserDelete(BaseCase):
 
+    @allure.testcase('https://test.com', 'JIRA-1097')
+    @allure.severity(allure.severity_level.TRIVIAL)
     def test_delete_static_user(self):
         # Login
         login_data = {
@@ -28,6 +32,9 @@ class TestUserDelete(BaseCase):
                f"Please, do not delete test users with ID 1, 2, 3, 4 or 5.", \
                f"Unexpected response content {response2.content}"
 
+    @allure.testcase('https://test.com', 'JIRA-1097')
+    @allure.issue('link issue', 'Issue name')
+    @allure.severity(allure.severity_level.NORMAL)
     def test_delete_just_created_user(self):
         #Register
         register_data = self.prepare_registration_data()
@@ -71,6 +78,8 @@ class TestUserDelete(BaseCase):
                f"Invalid username/password supplied", \
                f"Unexpected response content {response2.content}"
 
+    @allure.testcase('https://test.com', 'JIRA-1098')
+    @allure.severity(allure.severity_level.NORMAL)
     def test_delete_user_auth_as_another_user(self):
         # Register
         register_data = self.prepare_registration_data()
